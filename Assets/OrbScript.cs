@@ -7,8 +7,9 @@ public class OrbScript : MonoBehaviour {
     public Rigidbody2D orbRB;
     public Collider2D orbCollider;
 
+    public float orbAcceleration;
     public int orbAttract = 0;
-    public float speed = 1.0f;
+    public float speed;
     public static float orbSpeed;
     public static float acceleration = 9.81f;
     public static float orbStep;
@@ -21,6 +22,8 @@ public class OrbScript : MonoBehaviour {
         orbCollider = GetComponent<Collider2D>();
 
         orbRB.freezeRotation = true;
+        orbAcceleration = 0.05f;
+
 	}
 	
 	// Update is called once per frame
@@ -35,7 +38,7 @@ public class OrbScript : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            orbRB.AddForce((transform.position - GameObject.Find("player").transform.position) * -0.75f);
+            orbRB.AddForce((transform.position - GameObject.Find("player").transform.position) * -orbAcceleration);
         } else
         {
             orbRB.AddForce(Vector3.zero);
