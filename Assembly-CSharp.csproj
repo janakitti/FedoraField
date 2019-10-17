@@ -65,6 +65,7 @@
     <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\OrbScore.cs" />
     <Compile Include="Assets\OrbScript.cs" />
+    <Compile Include="Assets\PinkBullet.cs" />
     <Compile Include="Assets\PinkEnemy.cs" />
     <Compile Include="Assets\PlayerScript.cs" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />

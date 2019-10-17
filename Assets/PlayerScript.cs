@@ -7,12 +7,17 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour {
     public float speed;
     public Rigidbody2D rb;
+    private bool facingRight;
+    public static Collider2D playerCollider;
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         rb.drag = 2.5f;
         rb.freezeRotation = true;
 
+        playerCollider = GetComponent<Collider2D>();
+
+        facingRight = true;
         speed = 4.0f;
     }
 	
@@ -59,7 +64,34 @@ public class PlayerScript : MonoBehaviour {
         {
             speedMultiplier = 1;
         }
+
+        
+
         transform.position += Vector3.right * (moveRight - moveLeft) * speedMultiplier * speed * Time.deltaTime;
         transform.position += Vector3.up * (moveUp - moveDown) * speedMultiplier * speed * Time.deltaTime;
+        
+
+
+
+    }
+
+    private void Flip(int scale)
+    {
+        
+        if (facingRight == true && scale == -1)
+        {
+            Debug.Log("hi");
+            Vector3 horScale = transform.localScale;
+            horScale.x *= -1;
+            transform.localScale = horScale;
+            facingRight = false;
+        } else if (facingRight = false && scale == 1)
+        {
+            Vector3 horScale = transform.localScale;
+            horScale.x *= -1;
+            transform.localScale = horScale;
+            facingRight = true;
+        }
+
     }
 }
