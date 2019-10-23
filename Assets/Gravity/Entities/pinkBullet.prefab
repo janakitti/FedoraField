@@ -120,6 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pinkBulletAcceleration: 0
   target: {fileID: 1035162539744580, guid: 680010f5e3936124a82c10f9fda09f9e, type: 2}
+  centAcc: 0
+  tanVel: 0
 --- !u!212 &212588066488925622
 SpriteRenderer:
   m_ObjectHideFlags: 1

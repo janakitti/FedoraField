@@ -18,7 +18,7 @@ public class PlayerScript : MonoBehaviour {
         playerCollider = GetComponent<Collider2D>();
 
         facingRight = true;
-        speed = 4.0f;
+        speed = 7.0f;
     }
 	
 	// Update is called once per frame
@@ -33,9 +33,6 @@ public class PlayerScript : MonoBehaviour {
 
 
         // Using a more kinematic approach, no inertia
-        
-
-        
 
 
 
@@ -85,7 +82,7 @@ public class PlayerScript : MonoBehaviour {
             horScale.x *= -1;
             transform.localScale = horScale;
             facingRight = false;
-        } else if (facingRight = false && scale == 1)
+        } else if (facingRight == false && scale == 1)
         {
             Vector3 horScale = transform.localScale;
             horScale.x *= -1;

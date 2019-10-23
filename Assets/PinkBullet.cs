@@ -9,14 +9,28 @@ public class PinkBullet : MonoBehaviour
     Rigidbody2D rb;
     public GameObject target;
     Vector2 moveDirection;
+    public static Collider2D pinkBulletCollider;
+
+    public float centAcc;
+    public float tanVel;
+
+    private bool canKillEnemy;
+
     // Use this for initialization
     void Start()
     {
+        centAcc = 25f;
+        tanVel = 5f;
         rb = GetComponent<Rigidbody2D>();
+        pinkBulletCollider = GetComponent<Collider2D>();
         Destroy(gameObject, 10f);
-        bulletSpeed = 60.0f;
+        bulletSpeed = 120.0f;
         rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -bulletSpeed);
+
+        canKillEnemy = false;
+
         /*
+        
         
         
         moveDirection = (target.transform.position - transform.position).normalized * bulletSpeed;
@@ -32,7 +46,12 @@ public class PinkBullet : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -10.0f);
+            if (Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 3)
+            {
+                rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -centAcc);
+                rb.velocity = Vector2.Perpendicular(transform.position - GameObject.Find("player").transform.position) * tanVel;
+            }
+           
         }
         else
         {
@@ -41,7 +60,7 @@ public class PinkBullet : MonoBehaviour
 
 
 
-        if (rb.IsTouching(PlayerScript.playerCollider))
+        if (rb.IsTouching(PlayerScript.playerCollider) || rb.IsTouching(Wall.wallCollider))
         {
             // CAMERA SHAKE
             //CameraFollow.target.position += Vector3.right * 1;
@@ -52,6 +71,11 @@ public class PinkBullet : MonoBehaviour
     void FixedUpdate()
     {
         
+
+    }
+
+    void BulletOrbit()
+    {
 
     }
 }

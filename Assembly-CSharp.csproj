@@ -68,6 +68,7 @@
     <Compile Include="Assets\PinkBullet.cs" />
     <Compile Include="Assets\PinkEnemy.cs" />
     <Compile Include="Assets\PlayerScript.cs" />
+    <Compile Include="Assets\Wall.cs" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/JRatana/Documents/GitHub/FedoraField/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
