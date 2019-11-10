@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public static Collider2D playerCollider;
 
+    public static int fieldState;
+
     private bool facingRight;
     
     // Use this for initialization
@@ -23,7 +25,9 @@ public class Player : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
 
         facingRight = true;
-        speed = 7.0f;
+        speed = 4.0f;
+
+        fieldState = 0;
     }
 
     // Update is called once per frame
@@ -34,7 +38,16 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        int moveLeft = Input.GetKey(KeyCode.A) ? 1 : 0;
+
+        if (Input.GetKey(KeyCode.Alpha0))
+        {
+            fieldState = 0;
+        } else if (Input.GetKey(KeyCode.Alpha1))
+        {
+            fieldState = 1;
+        }
+
+            int moveLeft = Input.GetKey(KeyCode.A) ? 1 : 0;
         int moveRight = Input.GetKey(KeyCode.D) ? 1 : 0;
         int moveUp = Input.GetKey(KeyCode.W) ? 1 : 0;
         int moveDown = Input.GetKey(KeyCode.S) ? 1 : 0;

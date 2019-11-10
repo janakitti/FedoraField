@@ -8,8 +8,10 @@ public class PinkEnemy : MonoBehaviour
     public float health;
 
     public Rigidbody2D rb;
+    public Collider2D cd;
     public GameObject pinkBullet;
     public Collider2D pbCollider;
+
 
     float fireRate;
     float nextFire;
@@ -23,7 +25,7 @@ public class PinkEnemy : MonoBehaviour
     {
         isSearching = true;
         rb = GetComponent<Rigidbody2D>();
-
+        cd = GetComponent<Collider2D>();
         health = 100;
 
         fireRate = 1f;
@@ -34,6 +36,7 @@ public class PinkEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fireRate = Random.Range(2.0f, 4.0f);
 
         Vector3 targ = GameObject.Find("player").transform.position;
         targ.z = 0f;
@@ -53,13 +56,13 @@ public class PinkEnemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (rb.IsTouching(pbCollider))
+        /*
+        if (cd.IsTouching(pbCollider))
         {
             Debug.Log("s");
             health -= 25;
         }
-
+        */
 
 
 
@@ -102,6 +105,15 @@ public class PinkEnemy : MonoBehaviour
     {
  
 
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.tag == "Projectile")
+        {
+            health -= 25;
+        }
     }
 
 

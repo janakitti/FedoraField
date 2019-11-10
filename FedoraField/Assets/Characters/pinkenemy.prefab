@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5644804210025372018}
   - component: {fileID: 5644804210025372019}
   - component: {fileID: 5644804210025372020}
+  - component: {fileID: 8290579664138402492}
   m_Layer: 0
   m_Name: pinkenemy
   m_TagString: Untagged
@@ -93,12 +94,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.31093347
 --- !u!50 &5644804210025372019
 Rigidbody2D:
   serializedVersion: 4
@@ -135,7 +136,24 @@ MonoBehaviour:
   speed: 0
   health: 0
   rb: {fileID: 0}
+  cd: {fileID: 0}
   pinkBullet: {fileID: 4442986947838870867, guid: ba8311f14adf551418a4bd8b3ba85b24,
     type: 3}
   pbCollider: {fileID: 4442986947838870864, guid: ba8311f14adf551418a4bd8b3ba85b24,
     type: 3}
+--- !u!58 &8290579664138402492
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5644804210025372021}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32

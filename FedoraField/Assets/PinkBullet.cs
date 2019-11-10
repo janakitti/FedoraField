@@ -34,7 +34,7 @@ public class PinkBullet : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && Player.fieldState == 0) 
         {
             if (Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 3)
             {
@@ -52,8 +52,6 @@ public class PinkBullet : MonoBehaviour
 
         if (rb.IsTouching(Player.playerCollider) || rb.IsTouching(Wall.wallCollider))
         {
-            // CAMERA SHAKE
-            //CameraFollow.target.position += Vector3.right * 1;
             Destroy(gameObject);
         }
     }

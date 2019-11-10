@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: Wall
     uniqueID: 2150863479
+    locked: 0
+  - name: Walltop
+    uniqueID: 4229664239
     locked: 0
