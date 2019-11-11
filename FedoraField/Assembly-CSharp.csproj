@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraMovement.cs" />
+    <Compile Include="Assets\MetalBlock.cs" />
+    <Compile Include="Assets\MetalBlockHor.cs" />
+    <Compile Include="Assets\MetalBlockVer.cs" />
     <Compile Include="Assets\PinkBullet.cs" />
     <Compile Include="Assets\PinkEnemy.cs" />
     <Compile Include="Assets\Player.cs" />
