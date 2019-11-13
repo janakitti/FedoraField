@@ -20,7 +20,7 @@ public class MetalBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Player.fieldState == 1)
+        if (Input.GetButton("X360_Y") && Player.fieldState == 1)
         {
             Debug.Log(Vector2.Angle(transform.position, GameObject.Find("player").transform.position));
             xVector = Vector3.Project((transform.position - GameObject.Find("player").transform.position), Vector2.right);

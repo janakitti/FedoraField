@@ -26,7 +26,7 @@ public class PinkEnemy : MonoBehaviour
         isSearching = true;
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
-        health = 100;
+        health = 10000;
 
         fireRate = 1f;
         nextFire = Time.time;
@@ -95,7 +95,7 @@ public class PinkEnemy : MonoBehaviour
                 Vector2 movement = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
                 rb.AddForce(movement);
             }
-            Instantiate(pinkBullet, transform.TransformPoint(1.5f, 0, 0), Quaternion.identity);
+            Instantiate(pinkBullet, transform.TransformPoint(1.0f, 0, 0), Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
 

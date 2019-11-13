@@ -38,11 +38,77 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
     }
 
 
     private void FixedUpdate()
     {
+        float xAxis = Input.GetAxis("Horizontal");
+        float yAxis = Input.GetAxis("Vertical");
+
+        transform.position += Vector3.right * xAxis * speed * Time.deltaTime;
+        transform.position += Vector3.up * yAxis * speed * Time.deltaTime;
+
+
+        if (xAxis < 0)
+        {
+
+            facingLeft = true;
+            facingRight = false;
+        }
+        if (xAxis > 0)
+        {
+            facingLeft = false;
+            facingRight = true;
+        }
+
+
+        if (facingLeft && !facingRight)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            facingLeft = false;
+        }
+        else if (!facingLeft && facingRight)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            facingRight = false;
+        }
+
+
+        
+
+        if (Input.GetButtonDown("X360_X"))
+        {
+            if (fieldState == 1)
+            {
+                fieldState = 0;
+            } else
+            {
+                fieldState++;
+            }
+            Debug.Log("Field State: " + fieldState);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
 
         if (Input.GetKey(KeyCode.Alpha0))
         {
@@ -99,6 +165,11 @@ public class Player : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
             facingRight = false;
         }
+
+
+
+        */
+
 
     }
 
