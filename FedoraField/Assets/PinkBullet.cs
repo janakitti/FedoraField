@@ -15,7 +15,7 @@ public class PinkBullet : MonoBehaviour
     public float centAcc;
     public float tanVel;
 
-    private bool canKillEnemy;
+    public static bool canKillEnemy;
 
     // Use this for initialization
     void Start()
@@ -49,8 +49,26 @@ public class PinkBullet : MonoBehaviour
         }
 
 
+        /*
+        if (rb.IsTouching(Player.playerCollider) || rb.IsTouching(PinkEnemy.cd) || rb.IsTouching(Wall.wallCollider))
+        {
+            Destroy(gameObject);
+        }
+        */
+    }
 
-        if (rb.IsTouching(Player.playerCollider) || rb.IsTouching(Wall.wallCollider))
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Enemy")
+        {
+            transform.gameObject.tag = "Projectile";
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }

@@ -8,7 +8,7 @@ public class PinkEnemy : MonoBehaviour
     public float health;
 
     public Rigidbody2D rb;
-    public Collider2D cd;
+    public static Collider2D cd;
     public GameObject pinkBullet;
     public Collider2D pbCollider;
 
@@ -26,7 +26,7 @@ public class PinkEnemy : MonoBehaviour
         isSearching = true;
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
-        health = 10000;
+        health = 100;
 
         fireRate = 1f;
         nextFire = Time.time;
@@ -95,7 +95,8 @@ public class PinkEnemy : MonoBehaviour
                 Vector2 movement = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
                 rb.AddForce(movement);
             }
-            Instantiate(pinkBullet, transform.TransformPoint(1.0f, 0, 0), Quaternion.identity);
+        
+            Instantiate(pinkBullet, transform.TransformPoint(0f, 0, 0), Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
 
@@ -113,6 +114,7 @@ public class PinkEnemy : MonoBehaviour
         if(collider.gameObject.tag == "Projectile")
         {
             health -= 25;
+            transform.gameObject.tag = "SafeProjectile";
         }
     }
 
