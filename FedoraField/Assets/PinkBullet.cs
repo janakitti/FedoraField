@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class PinkBullet : MonoBehaviour
 {
-    public float bulletSpeed;
-    public float pinkBulletAcceleration;
-
     Rigidbody2D rb;
-    public GameObject target;
-    Vector2 moveDirection;
     public static Collider2D pinkBulletCollider;
 
+    public float bulletSpeed;
+    public float pinkBulletAcceleration;
+    public GameObject target;
+    Vector2 moveDirection;
     public float centAcc;
     public float tanVel;
-
     public static bool canKillEnemy;
 
     // Use this for initialization
@@ -27,27 +25,24 @@ public class PinkBullet : MonoBehaviour
         Destroy(gameObject, 10f);
         bulletSpeed = 600.0f;
         rb.AddForce((transform.position - GameObject.Find("player").transform.position).normalized * -bulletSpeed);
-
         canKillEnemy = false;
     }
 
     void Update()
     {
-
         if (Input.GetButton("X360_Y") && Player.fieldState == 0) 
         {
             if (Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 3)
             {
                 rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -centAcc);
                 rb.velocity = Vector2.Perpendicular(transform.position - GameObject.Find("player").transform.position) * tanVel;
+                transform.gameObject.tag = "Projectile";
             }
-
         }
         else
         {
             rb.AddForce(Vector3.zero);
         }
-
 
         /*
         if (rb.IsTouching(Player.playerCollider) || rb.IsTouching(PinkEnemy.cd) || rb.IsTouching(Wall.wallCollider))
@@ -58,17 +53,10 @@ public class PinkBullet : MonoBehaviour
     }
 
 
-    void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "Enemy")
-        {
-            transform.gameObject.tag = "Projectile";
-        }
-    }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "Wall")
+        if (collider.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }

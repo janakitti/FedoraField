@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - SafeProjectile
   - Wall
+  - NewProjectile
   layers:
   - Default
   - TransparentFX
