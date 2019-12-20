@@ -17,7 +17,7 @@ public class MetalBlockHor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("X360_Y") && Player.fieldState == 1)
+        if (Input.GetButton("X360_Y") && Player.fieldState == 2)
         {
             if (Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 5)
             {

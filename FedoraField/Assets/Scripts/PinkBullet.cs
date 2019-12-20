@@ -30,7 +30,7 @@ public class PinkBullet : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("X360_Y") && Player.fieldState == 0) 
+        if (Input.GetButton("X360_Y") && Player.fieldState == 1) 
         {
             if (Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 3)
             {

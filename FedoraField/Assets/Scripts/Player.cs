@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         if (collider.gameObject.tag == "Enemy")
         {
             rb.AddForce((transform.position - collider.transform.position)*500);
-            health -= 5;
+            health -= 1;
         }
     }
 }
