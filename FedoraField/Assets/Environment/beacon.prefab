@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8491218682020314858}
   - component: {fileID: 3076646046822271148}
   - component: {fileID: 4059578135703031706}
+  - component: {fileID: -6447152603422663497}
   m_Layer: 0
   m_Name: beacon
   m_TagString: Untagged
@@ -93,7 +94,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -132,3 +133,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c247dec2b272345a63a9da4f43569a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  cd: {fileID: 0}
+  orbCount: 0
+--- !u!58 &-6447152603422663497
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825834540660949579}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.39384428

@@ -10,6 +10,8 @@ TagManager:
   - SafeProjectile
   - Wall
   - NewProjectile
+  - Orb
+  - WallDestroyer
   layers:
   - Default
   - TransparentFX
