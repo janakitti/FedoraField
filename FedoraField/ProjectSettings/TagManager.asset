@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Projectile
+  - Barrier
+  - Enemy
+  - SafeProjectile
+  - Wall
+  - NewProjectile
+  - Orb
+  - WallDestroyer
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1368442697
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Wallside
+    uniqueID: 2150863479
+    locked: 0
+  - name: Character
+    uniqueID: 1963332753
+    locked: 0
+  - name: Walltop
+    uniqueID: 4229664239
+    locked: 0

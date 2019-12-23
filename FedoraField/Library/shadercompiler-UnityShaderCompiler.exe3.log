@@ -1,0 +1,10 @@
+Base path: 'C:/Program Files/2019.2.8f1/Editor/Data', plugins path 'C:/Program Files/2019.2.8f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=3070 outsize=48128 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=10881 outsize=9840 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3396 outsize=2622 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=18299 outsize=8738 ok=1
