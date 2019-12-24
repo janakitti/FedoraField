@@ -13,6 +13,7 @@ TagManager:
   - Orb
   - WallDestroyer
   - BlankTag
+  - MetalBlock
   layers:
   - Default
   - TransparentFX

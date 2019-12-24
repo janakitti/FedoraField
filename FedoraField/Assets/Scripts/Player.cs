@@ -103,11 +103,11 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "NewProjectile")
+        if (collider.gameObject.tag == "Projectile" || collider.gameObject.tag == "NewProjectile")
         {
             collider.gameObject.tag = "SafeProjectile";
             Destroy(collider.gameObject);
-            health -= 5;
+            health -= collider.gameObject.GetComponent<PinkProjectile>().damage;
         }
         if (collider.gameObject.tag == "Enemy")
         {

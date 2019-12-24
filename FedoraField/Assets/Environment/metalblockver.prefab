@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5390393817692791573}
   m_Layer: 0
   m_Name: metalblockver
-  m_TagString: Untagged
+  m_TagString: MetalBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

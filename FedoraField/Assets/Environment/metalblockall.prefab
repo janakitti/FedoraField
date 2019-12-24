@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4300384712444506912}
   m_Layer: 0
   m_Name: metalblockall
-  m_TagString: WallDestroyer
+  m_TagString: MetalBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

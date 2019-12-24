@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc321ca2c26d0fe49a301b3a0d8772fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   bulletSpeed: 0
   pinkBulletAcceleration: 0
   target: {fileID: 0}

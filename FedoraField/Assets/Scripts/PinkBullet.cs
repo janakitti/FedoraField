@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkBullet : MonoBehaviour
+public class PinkBullet : PinkProjectile
 {
     Rigidbody2D rb;
     public static Collider2D pinkBulletCollider;
@@ -18,6 +18,7 @@ public class PinkBullet : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        damage = 5;
         centAcc = 25f;
         tanVel = 5f;
         rb = GetComponent<Rigidbody2D>();
