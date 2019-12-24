@@ -6,13 +6,13 @@ public class Beacon : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Collider2D cd;
-    public int orbCount;
+    public static int orbsCollected;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
-        orbCount = 0;
+        orbsCollected = 0;
     }
 
     // Update is called once per frame
@@ -25,8 +25,9 @@ public class Beacon : MonoBehaviour
     {
         if (collider.gameObject.tag == "Orb")
         {
+            collider.gameObject.tag = "BlankTag";
             Destroy(collider.gameObject);
-            orbCount++;
+            orbsCollected++;
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8237530042848040020}
   - component: {fileID: -5499539302990290570}
   - component: {fileID: 2675512595397942243}
+  - component: {fileID: -3339318627591746215}
   m_Layer: 0
   m_Name: orb
   m_TagString: Orb
@@ -135,3 +136,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &-3339318627591746215
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582409335638484361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32

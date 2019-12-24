@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -793709770053020234}
   - component: {fileID: 8916897293869791666}
   - component: {fileID: -160982199808921669}
+  - component: {fileID: -1485073049805163880}
   m_Layer: 0
   m_Name: pinkStar
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +94,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -130,7 +131,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -149,3 +150,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc7557f013b78f43bb1e6c15a6ba5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  rb: {fileID: 0}
+  cd: {fileID: 0}
+  attackSpeed: 0
+  attackForce: 0
+  sensoryRange: 0
+--- !u!60 &-1485073049805163880
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283339149612554007}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.21875}
+      - {x: -0.5, y: 0.5}
+      - {x: -0.21875, y: 0}
+      - {x: -0.5, y: -0.5}
+      - {x: 0, y: -0.21875}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.21875, y: 0}
+      - {x: 0.5, y: 0.5}

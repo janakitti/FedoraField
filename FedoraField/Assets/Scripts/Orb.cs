@@ -27,4 +27,15 @@ public class Orb : MonoBehaviour
             rb.AddForce(Vector3.zero);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+
 }

@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public float speed;
     public static int fieldState;
     public int health;
+    public DeathMenu deathMenu;
+    public FailureMenu failureMenu;
+    public CompletionMenu completionMenu;
 
     private bool facingRight;
     private bool facingLeft;
@@ -80,6 +83,22 @@ public class Player : MonoBehaviour
             }
             Debug.Log("Field State: " + fieldState);
         }
+
+        if (health <= 0) // Death trigger
+        {
+            OnDeath();
+            health = 0;
+        }
+
+        if (Beacon.orbsCollected + OrbCount.levelOrbs.Length < LevelManager.orbsRequired)
+        {
+            OnFailure();
+        }
+
+        if (Beacon.orbsCollected == LevelManager.orbsRequired)
+        {
+            OnCompletion();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -92,8 +111,24 @@ public class Player : MonoBehaviour
         }
         if (collider.gameObject.tag == "Enemy")
         {
+            Debug.Log("Ouf");
             rb.AddForce((transform.position - collider.transform.position)*500);
-            health -= 1;
+            health -= collider.gameObject.GetComponent<Enemy>().damage;
         }
+    }
+
+    void OnDeath()
+    {
+        deathMenu.ToggleEndMenu();
+    }
+
+    void OnFailure()
+    {
+        failureMenu.ToggleEndMenu(Beacon.orbsCollected, LevelManager.orbsRequired);
+    }
+
+    void OnCompletion()
+    {
+        completionMenu.ToggleEndMenu(0);
     }
 }

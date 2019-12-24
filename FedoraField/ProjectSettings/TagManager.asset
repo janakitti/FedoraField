@@ -12,6 +12,7 @@ TagManager:
   - NewProjectile
   - Orb
   - WallDestroyer
+  - BlankTag
   layers:
   - Default
   - TransparentFX

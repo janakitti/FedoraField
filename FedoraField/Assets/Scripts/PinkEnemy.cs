@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkEnemy : MonoBehaviour
+public class PinkEnemy : Enemy
 {
     public Rigidbody2D rb;
     public static Collider2D cd;
@@ -11,6 +11,7 @@ public class PinkEnemy : MonoBehaviour
 
     public float speed;
     public float health;
+
 
 
     float fireRate;
@@ -22,7 +23,9 @@ public class PinkEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
+
         health = 100;
+        damage = 1;
         nextFire = Time.time; // Holds gametime in seconds since start of play
     }
 
