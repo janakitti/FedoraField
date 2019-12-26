@@ -81,7 +81,6 @@ public class Player : MonoBehaviour
             {
                 fieldState++;
             }
-            Debug.Log("Field State: " + fieldState);
         }
 
         if (health <= 0) // Death trigger

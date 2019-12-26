@@ -81,7 +81,6 @@ public class PinkEnemy : Enemy
     {
         if(collider.gameObject.tag == "Projectile")
         {
-            Debug.Log("HIT!");
             collider.gameObject.tag = "SafeProjectile";
             Destroy(collider.gameObject);
             health -= 25;

@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\PinkTurret.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerLight.cs" />
+    <Compile Include="Assets\Scripts\tempPinkBullet.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />
     <Compile Include="Assets\Scripts\WallDest.cs" />
     <Reference Include="Unity.Timeline.Editor">
