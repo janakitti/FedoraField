@@ -12,13 +12,13 @@ public class Orb : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
-        orbAcceleration = 1.0f;
+        orbAcceleration = 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("X360_Y") && Player.fieldState == 0 && Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 8)
+        if (Player.isUsingField == 0 && Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 8)
         {
             rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -orbAcceleration);
         }

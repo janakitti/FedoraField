@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PinkSpark.cs" />
     <Compile Include="Assets\Scripts\Beacon.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CompletionMenu.cs" />
@@ -81,10 +80,12 @@
     <Compile Include="Assets\Scripts\PinkBullet.cs" />
     <Compile Include="Assets\Scripts\PinkEnemy.cs" />
     <Compile Include="Assets\Scripts\PinkProjectile.cs" />
+    <Compile Include="Assets\Scripts\PinkSpark.cs" />
     <Compile Include="Assets\Scripts\PinkStar.cs" />
     <Compile Include="Assets\Scripts\PinkTurret.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerLight.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\tempPinkBullet.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />
     <Compile Include="Assets\Scripts\WallDest.cs" />

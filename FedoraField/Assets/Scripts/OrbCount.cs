@@ -9,6 +9,7 @@ public class OrbCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelOrbs = GameObject.FindGameObjectsWithTag("Orb");
     }
 
     // Update is called once per frame

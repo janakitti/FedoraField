@@ -22,7 +22,6 @@ public class MetalBlock : MonoBehaviour
     {
         if (Input.GetButton("X360_Y") && Player.fieldState == 2 && Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 5)
         {
-            Debug.Log(Vector2.Angle(transform.position, GameObject.Find("player").transform.position));
             xVector = Vector3.Project((transform.position - GameObject.Find("player").transform.position), Vector2.right);
             yVector = Vector3.Project((transform.position - GameObject.Find("player").transform.position), Vector2.up);
             axisVector = xVector.magnitude > yVector.magnitude ? xVector : yVector;

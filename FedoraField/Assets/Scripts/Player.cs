@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public float speed;
     public static int fieldState;
+    public static int isUsingField;
     public int health;
     public DeathMenu deathMenu;
     public FailureMenu failureMenu;
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
         health = 100;
         speed = 4.0f;
         fieldState = 0;
+        isUsingField = -1;
         rb.drag = 2.5f;
         rb.freezeRotation = true;
         facingRight = true;
@@ -82,6 +84,27 @@ public class Player : MonoBehaviour
                 fieldState++;
             }
         }
+
+        if (Input.GetButton("X360_Y"))
+        {
+            if (Player.fieldState == 0)
+            {
+                isUsingField = 0;
+            } else if (Player.fieldState == 1)
+            {
+                isUsingField = 1;
+            } else if (Player.fieldState == 2)
+            {
+                isUsingField = 2;
+            }
+        } else
+        {
+            isUsingField = -1;
+        }
+
+
+
+
 
         if (health <= 0) // Death trigger
         {
