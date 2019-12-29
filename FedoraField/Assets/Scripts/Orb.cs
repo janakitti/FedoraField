@@ -20,7 +20,9 @@ public class Orb : MonoBehaviour
     {
         if (Player.isUsingField == 0 && Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 8)
         {
-            rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -orbAcceleration);
+            rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -1.5f);
+            //rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -50f);
+            //rb.velocity = Vector2.Perpendicular(transform.position - GameObject.Find("player").transform.position) * 1f;
         }
         else
         {
@@ -30,7 +32,7 @@ public class Orb : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "PinkProjectile")
+        if (collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "PinkProjectile")
         {
             Destroy(gameObject);
         }

@@ -18,7 +18,7 @@ public class MetalBlock : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        damage = 1;
+        damage = 10;
     }
 
     // Update is called once per frame
@@ -33,4 +33,14 @@ public class MetalBlock : MonoBehaviour
 
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "MetalBarrier")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 }

@@ -59,7 +59,7 @@ public class PinkBullet : PinkProjectile
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Wall")
+        if (collider.gameObject.tag == "Wall" || collider.gameObject.tag == "MetalBlock" || collider.gameObject.tag == "MetalBarrier")
         {
             Destroy(gameObject);
         }

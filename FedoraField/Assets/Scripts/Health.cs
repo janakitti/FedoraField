@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Player player;
     public Text scoreText;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +13,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "HP: "+ player.health.ToString();
+        scoreText.text = "HP: "+ Player.health.ToString();
     }
 }

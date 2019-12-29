@@ -15,6 +15,7 @@ TagManager:
   - BlankTag
   - MetalBlock
   - SafeMetalBlock
+  - MetalBarrier
   layers:
   - Default
   - TransparentFX

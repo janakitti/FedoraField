@@ -23,6 +23,7 @@ public class PinkStar : Enemy
         attackForce = 80f;
         sensoryRange = 8f;
         damage = 10;
+        health = 30;
         isAttacking = false;
     }
 
@@ -50,5 +51,22 @@ public class PinkStar : Enemy
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Projectile")
+        {
+            Debug.Log("HIT");
+            collider.gameObject.tag = "SafeProjectile";
+            Destroy(collider.gameObject);
+            health -= collider.gameObject.GetComponent<PinkProjectile>().damage;
+
+        }
+        else if (collider.gameObject.tag == "MetalBlock")
+        {
+            collider.gameObject.tag = "SafeMetalBlock";
+            health -= collider.gameObject.GetComponent<MetalBlock>().damage;
+        }
     }
 }

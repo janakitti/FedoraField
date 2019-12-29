@@ -10,7 +10,7 @@ public class PinkEnemy : Enemy
     public Collider2D pbCollider;
 
     public float speed;
-    public float health;
+
 
 
 
@@ -81,6 +81,7 @@ public class PinkEnemy : Enemy
     {
         if(collider.gameObject.tag == "Projectile")
         {
+            Debug.Log("HIT");
             collider.gameObject.tag = "SafeProjectile";
             Destroy(collider.gameObject);
             health -= collider.gameObject.GetComponent<PinkProjectile>().damage;
@@ -89,14 +90,6 @@ public class PinkEnemy : Enemy
         {
             collider.gameObject.tag = "SafeMetalBlock";
             health -= collider.gameObject.GetComponent<MetalBlock>().damage;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collider)
-    {
-        if (collider.gameObject.tag == "SafeMetalBlock")
-        {
-            collider.gameObject.tag = "MetalBlock";
         }
     }
 }

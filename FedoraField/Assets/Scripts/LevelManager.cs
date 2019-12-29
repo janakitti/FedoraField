@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         missionName = "Dawn";
-        orbsRequired = 75;
+        orbsRequired = 10;
 
         bgMusicSource.clip = bgMusicClip;
         beatSource.clip = beatClip;

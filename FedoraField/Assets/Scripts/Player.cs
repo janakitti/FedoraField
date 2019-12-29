@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float speed;
     public static int fieldState;
     public static int isUsingField;
-    public int health;
+    public static int health;
     public DeathMenu deathMenu;
     public FailureMenu failureMenu;
     public CompletionMenu completionMenu;
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
             OnFailure();
         }
 
-        if (Beacon.orbsCollected == LevelManager.orbsRequired)
+        if (Beacon.orbsCollected >= LevelManager.orbsRequired)
         {
             OnCompletion();
         }
