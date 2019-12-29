@@ -22,7 +22,7 @@ public class PinkStar : Enemy
         attackSpeed = 0.07f;
         attackForce = 80f;
         sensoryRange = 8f;
-        damage = 5;
+        damage = 10;
         isAttacking = false;
     }
 

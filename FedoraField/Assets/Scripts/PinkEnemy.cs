@@ -24,7 +24,7 @@ public class PinkEnemy : Enemy
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
 
-        health = 100;
+        health = 25;
         damage = 1;
         nextFire = Time.time; // Holds gametime in seconds since start of play
     }
@@ -83,8 +83,20 @@ public class PinkEnemy : Enemy
         {
             collider.gameObject.tag = "SafeProjectile";
             Destroy(collider.gameObject);
-            health -= 25;
+            health -= collider.gameObject.GetComponent<PinkProjectile>().damage;
             
+        } else if (collider.gameObject.tag == "MetalBlock")
+        {
+            collider.gameObject.tag = "SafeMetalBlock";
+            health -= collider.gameObject.GetComponent<MetalBlock>().damage;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "SafeMetalBlock")
+        {
+            collider.gameObject.tag = "MetalBlock";
         }
     }
 }

@@ -21,7 +21,10 @@ public class Player : MonoBehaviour
     private bool facingLeft;
     private int moveLeft;
     private int moveRight;
-    
+
+    float regenRate;
+    float nextRegen;
+
     // Use this for initialization
     void Start()
     {
@@ -36,6 +39,9 @@ public class Player : MonoBehaviour
         rb.freezeRotation = true;
         facingRight = true;
         facingLeft = false;
+
+        nextRegen = Time.time; // Holds gametime in seconds since start of play
+        regenRate = 5f;
     }
 
     // Update is called once per frame
@@ -46,6 +52,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        CheckIfHealthRegen();
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
 
@@ -136,6 +143,21 @@ public class Player : MonoBehaviour
             Debug.Log("Ouf");
             rb.AddForce((transform.position - collider.transform.position)*500);
             health -= collider.gameObject.GetComponent<Enemy>().damage;
+        }
+    }
+
+    void CheckIfHealthRegen()
+    {
+        if (Time.time > nextRegen)
+        {   
+            if (health < 95)
+            {
+                health += 5;
+            } else if (health >= 95 && health < 100)
+            {
+                health = 100;
+            }
+            nextRegen = Time.time + regenRate;
         }
     }
 

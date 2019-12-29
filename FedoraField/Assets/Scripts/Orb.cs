@@ -30,7 +30,7 @@ public class Orb : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "PinkProjectile")
         {
             Destroy(gameObject);
         }

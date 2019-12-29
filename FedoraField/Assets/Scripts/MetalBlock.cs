@@ -7,6 +7,8 @@ public class MetalBlock : MonoBehaviour
 
     Rigidbody2D rb;
 
+    public int damage;
+
     public Vector3 xVector;
     public Vector3 yVector;
     public Vector3 axisVector;
@@ -15,6 +17,8 @@ public class MetalBlock : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        damage = 1;
     }
 
     // Update is called once per frame

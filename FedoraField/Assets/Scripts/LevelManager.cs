@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static int orbsRequired;
+    public static string missionName;
 
     public AudioClip bgMusicClip;
     public AudioSource bgMusicSource;
@@ -24,7 +25,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        orbsRequired = 2;
+        missionName = "Dawn";
+        orbsRequired = 75;
 
         bgMusicSource.clip = bgMusicClip;
         beatSource.clip = beatClip;
