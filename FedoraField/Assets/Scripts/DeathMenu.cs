@@ -7,6 +7,7 @@ using UnityEngine;
 public class DeathMenu : MonoBehaviour
 {
     public Button retryButton;
+    public LevelLoader levelLoader;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,11 @@ public class DeathMenu : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        levelLoader.LoadLevel(SceneManager.GetActiveScene().name);
     }
 
     public void ExitLevel()
     {
-        SceneManager.LoadScene("LevelSelect");
+        levelLoader.LoadLevel("level_select");
     }
 }

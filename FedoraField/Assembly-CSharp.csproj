@@ -62,8 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HealthBar.cs" />
-    <Compile Include="Assets\MissionMenu.cs" />
+    <Compile Include="Assets\MainMenuMusic.cs" />
     <Compile Include="Assets\Scripts\Beacon.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CompletionMenu.cs" />
@@ -72,11 +71,16 @@
     <Compile Include="Assets\Scripts\FailureMenu.cs" />
     <Compile Include="Assets\Scripts\FieldStateIcon.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\LevelButton.cs" />
+    <Compile Include="Assets\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MetalBarrier.cs" />
     <Compile Include="Assets\Scripts\MetalBlock.cs" />
     <Compile Include="Assets\Scripts\MetalBlockHor.cs" />
     <Compile Include="Assets\Scripts\MetalBlockVer.cs" />
+    <Compile Include="Assets\Scripts\MissionMenu.cs" />
     <Compile Include="Assets\Scripts\Orb.cs" />
     <Compile Include="Assets\Scripts\OrbCount.cs" />
     <Compile Include="Assets\Scripts\PinkBullet.cs" />
@@ -87,6 +91,7 @@
     <Compile Include="Assets\Scripts\PinkTurret.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerLight.cs" />
+    <Compile Include="Assets\Scripts\PlayerLS.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\tempPinkBullet.cs" />
     <Compile Include="Assets\Scripts\Wall.cs" />

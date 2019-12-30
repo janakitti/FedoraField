@@ -8,6 +8,7 @@ public class CompletionMenu : MonoBehaviour
 {
     public Text completionInfo;
     public Button exitButton;
+    public LevelLoader levelLoader;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,6 @@ public class CompletionMenu : MonoBehaviour
 
     public void ExitLevel()
     {
-        SceneManager.LoadScene("LevelSelect");
+        levelLoader.LoadLevel("level_select");
     }
 }
