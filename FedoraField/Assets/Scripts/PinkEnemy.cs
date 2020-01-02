@@ -32,7 +32,7 @@ public class PinkEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        fireRate = Random.Range(2.0f, 4.0f); // Randomize when the next shot should be
+        fireRate = Random.Range(.5f, 4.0f); // Randomize when the next shot should be
 
         Vector3 targ = GameObject.Find("player").transform.position;
         targ.z = 0f;
@@ -45,7 +45,7 @@ public class PinkEnemy : Enemy
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
         // Shooting
-        CheckIfTimeToFire();
+        
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -56,6 +56,7 @@ public class PinkEnemy : Enemy
     {
         if (Vector2.Distance(transform.position, GameObject.Find("player").transform.position) < 7 && Vector2.Distance(transform.position, GameObject.Find("player").transform.position) > 3)
         {
+            CheckIfTimeToFire();
             transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("player").transform.position, 0.03f);
         }
         else

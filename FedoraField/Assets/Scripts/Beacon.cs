@@ -13,6 +13,8 @@ public class Beacon : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
         orbsCollected = 0;
+
+        rb.angularVelocity = 1000f;
     }
 
     // Update is called once per frame

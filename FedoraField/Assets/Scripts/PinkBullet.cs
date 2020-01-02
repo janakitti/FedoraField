@@ -39,6 +39,10 @@ public class PinkBullet : PinkProjectile
             {
                 rb.AddForce((transform.position - GameObject.Find("player").transform.position) * -centAcc);
                 rb.velocity = Vector2.Perpendicular(transform.position - GameObject.Find("player").transform.position) * tanVel;
+                if (transform.localScale.x <= 1)
+                {
+                    transform.localScale += new Vector3(0.01f, 0.01f, 0f);
+                }
                 transform.gameObject.tag = "Projectile";
             }
         }

@@ -27,7 +27,6 @@ public class PinkSpark : PinkProjectile
         tanVel = 2f;
         rb = GetComponent<Rigidbody2D>();
         pinkBulletCollider = GetComponent<Collider2D>();
-        Destroy(gameObject, 10f);
         bulletSpeed = 100.0f;
         rb.AddForce(Vector2.up * bulletSpeed);
         canKillEnemy = false;

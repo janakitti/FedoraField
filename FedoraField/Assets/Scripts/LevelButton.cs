@@ -28,7 +28,7 @@ public class LevelButton : MonoBehaviour
             }
         } else
         {
-            levelNameDisplay.text = "";
+            //levelNameDisplay.text = "";
         }
         
     }

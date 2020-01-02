@@ -19,7 +19,6 @@ public class CompletionMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void ToggleEndMenu(int score)

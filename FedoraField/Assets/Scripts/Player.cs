@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public DeathMenu deathMenu;
     public FailureMenu failureMenu;
     public CompletionMenu completionMenu;
+    public LevelManager levelManager;
 
     private bool facingRight;
     private bool facingLeft;
@@ -119,12 +120,12 @@ public class Player : MonoBehaviour
             health = 0;
         }
 
-        if (Beacon.orbsCollected + OrbCount.levelOrbs.Length < LevelManager.orbsRequired)
+        if (Beacon.orbsCollected + OrbCount.levelOrbs.Length < levelManager.orbsRequired)
         {
             OnFailure();
         }
 
-        if (Beacon.orbsCollected >= LevelManager.orbsRequired)
+        if (Beacon.orbsCollected >= levelManager.orbsRequired)
         {
             OnCompletion();
         }
@@ -168,7 +169,7 @@ public class Player : MonoBehaviour
 
     void OnFailure()
     {
-        failureMenu.ToggleEndMenu(Beacon.orbsCollected, LevelManager.orbsRequired);
+        failureMenu.ToggleEndMenu(Beacon.orbsCollected, levelManager.orbsRequired);
     }
 
     void OnCompletion()

@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MainMenuMusic.cs" />
     <Compile Include="Assets\Scripts\Beacon.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CompletionMenu.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainMenuMusic.cs" />
     <Compile Include="Assets\Scripts\MetalBarrier.cs" />
     <Compile Include="Assets\Scripts\MetalBlock.cs" />
     <Compile Include="Assets\Scripts\MetalBlockHor.cs" />

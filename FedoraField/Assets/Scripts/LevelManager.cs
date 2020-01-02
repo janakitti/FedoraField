@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static int orbsRequired;
+    public int orbsRequired;
     public static string missionName;
+    public MissionMenu missionMenu;
 
     public AudioClip bgMusicClip;
     public AudioSource bgMusicSource;
@@ -26,7 +27,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         missionName = "Dawn";
-        orbsRequired = 10;
+        missionMenu.ToggleMissionMenu();
 
         bgMusicSource.clip = bgMusicClip;
         beatSource.clip = beatClip;
